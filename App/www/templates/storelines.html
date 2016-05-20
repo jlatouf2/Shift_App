@@ -1,0 +1,323 @@
+<ion-view >
+  <ion-nav-title class="bob3" style="font-size: 27px;">
+  <!--  <img src="logo.svg" > -->
+    Shift
+  </ion-nav-title>
+
+  <ion-nav-buttons side="right">
+    <button class="button" ng-hide="userdata" ng-click="doSomething()">
+    Sign Up
+    </button>
+    <button class="button" ng-hide="userdata" ng-click="login()">
+    Log In
+    </button>
+    <a menu-close href="#/app/splash" class="button" ng-show="userdata"  ng-click="logout()">
+      Log Out
+    </a>
+
+  </ion-nav-buttons>
+
+  <ion-content>
+
+    <div class="bar bar-header bar-positive">
+      <h1 class="title">Lines Available<div></h1>
+        <button class="button" style="font-size: 16px;" ng-click="openlinesmodal()">Help</button>
+
+    </div>
+
+<div ng-controller="storelinesController">
+
+<!-- 	USE THIS TO PASS NAME TO NEXT PAGE (IF you dont use the same way as you did with this page)
+	<a href="/#/contacts/{{contact.username}}" class="list-group-item active"> {{contact.username}}</a>
+  <div >
+    <h1 style="text-align: center; " > <a href="">Lines Available in Store: {{grabStorename}}</h1></a>
+
+
+    <h1   style="text-align: center; " > <a href="">Lines Available in Store: {{grabStorename}}</h1></a>
+
+ </div>
+
+ -->
+
+</br>
+</br>
+<br>
+
+<div >
+  <h1  class="bob3" style="text-align: center; " > Lines Available in Store: <a href="">{{grabLineIn || "FutureShop"}}</a></h1>
+
+</div>
+
+
+
+<!--
+<h3 class="bob3" > &nbsp;  &nbsp;        &nbsp;     &nbsp;<span style=" text-decoration: underline; ">Lines Available for {{grabLineIn || "FutureShop"}}: </span></h3>
+-->
+
+
+<ion-item class="item-remove-animate item-avatar item-icon-right" on-hold="onHold2(line)" ng-repeat="line in lines | filter:search | orderBy:'contact'" ng-click="getLineName(line)" type="item-text-wrap"  href="#/app/tabposition">
+
+  <img src="img/ionic.png">
+  <h2>{{line}}</h2>
+  <p>There are people in this line by default. {{$index}}</p>
+
+
+  <i class="icon ion-chevron-right icon-accessory">
+  <!--
+  <button class="button button-positive" ng-click="removeName()">
+Edit</button>
+
+
+  <button class="button-assertive" ng-click="remove(chat)">
+        Delete
+      </button> -->
+  </i>
+
+
+
+
+</ion-item>
+
+
+
+<ul class="list"  >
+    <li class="item" class="padding-top">
+      <!--
+      <button class="button button-positive" ng-click="addName2()">
+        Add Name2
+      </button>
+    -->
+    <br>
+
+      <button class="button button-positive"
+      style="font-size: 16px; position: absolute; right: 10px; bottom: 0.5px;" ng-click="addLine()" >
+        Add Line
+      </button>
+      <!--
+      <button class=" button button-positive" ng-click="removeName2()">
+        Remove Name2
+      </button>
+      <button class="button button-positive" ng-click="opentabmodal()">
+        Help
+      </button>
+      -->
+
+</li>
+</ul>
+
+
+
+
+
+<!--
+
+<li class="item" >
+  <button style="font-size: 16px; position: absolute; right: 10px; bottom: 0.5px;" class="button button-positive" ng-click="addLine()">
+    Add Line
+  </button>
+
+
+  <button class="button button-positive"
+  style="font-size: 16px; position: absolute; right: 10px; bottom: 0.5px;" ng-click="addSavedName()" >
+    AddSavedname
+  </button>
+
+  <button class="button button-positive" ng-click="removeLine()">
+    Remove Line
+  </button>
+</li>
+
+
+<ion-list>
+    <ion-item class="item item-avatar item item-button-right"  on-hold="onHold()" ng-click="getLineName(line)"   ng-repeat="line in lines | filter:search | orderBy:'contact'">
+
+      <img src="img/ionic.png">
+      <h2 ><span >{{line}}  </h2>
+      <p>There are people in this line by default. {{$index}}</p>
+
+</ion-item>
+
+
+    <li class="item">
+        <button class="button button-positive" ng-click="addLine()">
+          Add Line
+        </button>
+        <button class="button button-positive" ng-click="removeLine()">
+          Remove Line
+        </button>
+        <button class="button button-positive  item-button-right" ng-click="openlinesmodal()">
+          Help
+        </button>
+
+    </li>
+</ion-list>
+<div class="list">
+    <a class="item item-avatar item item-button-right"  href="#/app/tabposition" ng-click="getLineName(line)"  ng-repeat="line in lines | filter:search | orderBy:'contact'">
+      <img src="img/ionic.png">
+      <h2>{{line}}</h2>
+      <p>There are people in this line by default. {{$index}}</p>
+      <button class="button button-positive" >
+  Edit</button>
+
+
+    </a>
+
+    <li class="item">
+        <button class="button button-positive" ng-click="addLine()">
+          Add Line
+        </button>
+        <button class="button button-positive" ng-click="removeLine()">
+          Remove Line
+        </button>
+        <button class="button button-positive  item-button-right" ng-click="openlinesmodal()">
+          Help
+        </button>
+
+    </li>
+</div>
+
+
+<ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+  <img ng-src="{{chat.face}}">
+  <h2>{{chat.name}}</h2>
+  <p> Position: {{chat.id}}</p>
+
+  <i class="icon ion-chevron-right icon-accessory">
+          <button class="button button-positive" >
+      Edit</button>
+  </i>
+</ion-item>
+
+
+<ul class="list">
+    <li class="item">
+<div style="margin-left: 200px;">
+<button class="button button-positive" ng-click="addLine()">
+  Add Line
+</button>
+<button class="button button-positive" ng-click="removeLine()">
+  Remove Line
+</button>
+</div>
+</li>
+</ul>
+
+<h3>Add Another Line to Table:</h3>
+
+<ul class="list">
+    <li class="item">
+
+<button class="button button-positive" ng-click="addName()">
+  Add Line
+</button>
+<button class="button button-positive" ng-click="numberRows()">
+  Number of Lines
+</button>
+</li>
+</ul>
+
+<div class="list">
+
+    <a class="item item-avatar item item-button-right" href="#" ng-repeat="lineups in lineups2 | filter:search | orderBy:'contact'">
+      <img src="img/Unknown.jpeg">
+      <h2>{{lineups}}</h2>
+      <p>Back off, man. I'm a scientist. {{$index}}</p>
+      <button class="button button-positive" >
+  Edit</button>
+
+    </a>
+
+
+
+</div>
+-->
+
+<!--
+<ul class="list">
+    <li class="item">
+      <button class="button button-positive" ng-click="addName2()">
+        Add Name2
+      </button>
+      <button class="button button-positive" ng-click="removeName2()">
+        Remove Name2
+      </button>
+
+</li>
+</ul>
+
+
+
+  <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+    <img ng-src="{{chat.face}}">
+    <h2>{{chat.name}}</h2>
+    <p>{{chat.lastText}}</p>
+
+    <i class="icon ion-chevron-right icon-accessory">
+            <button class="button button-positive" >
+        Edit</button>
+        <button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </button>
+    </i>
+  </ion-item>
+
+
+-->
+
+<!--
+<div class="table-responsive">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Add Another Line to Table:</th>
+				<th><button class="btn btn-default btn-xs"  ng-click="addName()">Add Line</button></th>
+				<th><button class="btn btn-default btn-xs"  ng-click="numberRows()">Number of LInes</button></th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="lineups in lineups2 | filter:search | orderBy:'contact'">
+				<td> <a href="/#/peopleinline" ng-click="grabStuff(lineups)"class="list-group-item active" style="text-align: center; "> {{lineups}}</a></td>
+
+						  <td> <img  class="img-circle" src="images/Unknown.jpeg" style="width:50px;height:50px;"> {{$index}} </td>
+				<td>
+					<a href="/#/contacts/{{$index}}" class="btn btn-default btn-xs">View</a>
+					<button class="btn btn-danger btn-xs" ng-click="removeName(name)">Delete</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+-->
+
+<!--
+<div class="table-responsive">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Add Another Line to Table:</th>
+				<th><button class="btn btn-default btn-xs"  ng-click="addName()">Add Line</button></th>
+				<th><button class="btn btn-default btn-xs"  ng-click="numberRows()">Number of LInes</button></th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="lineups in lineups2 | filter:search | orderBy:'contact'">
+				<td> <a href="/#/peopleinline" ng-click="grabStuff(lineups)"class="list-group-item active" style="text-align: center; "> {{lineups}}</a></td>
+
+						  <td> <img  class="img-circle" src="images/Unknown.jpeg" style="width:50px;height:50px;"> {{$index}} </td>
+				<td>
+					<a href="/#/contacts/{{$index}}" class="btn btn-default btn-xs">View</a>
+					<button class="btn btn-danger btn-xs" ng-click="removeName(name)">Delete</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+-->
+
+
+<!--['count_win','goal_average']-->
+</div>
+</ion-content>
+</ion-view>

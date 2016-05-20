@@ -1,0 +1,95 @@
+/* Empty. Add your own CSS if you like */
+.col{
+background: gray;
+border: think solid black;
+}
+
+body {
+    cursor: url('http://ionicframework.com/img/finger.png'), auto;
+
+}
+
+.img-circle {
+    border-radius: 50%;
+
+}
+
+.circular {
+	width: 300px;
+	height: 300px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	}
+
+
+.header .col {
+    background-color:lightgrey;
+}
+@font-face {
+    font-family: 'YourFontName'; /*a name to be used later*/
+    src: url('./mochary/Mochary_PERSONAL_USE_ONLY.ttf'); /*URL to font*/
+}
+
+.bob {
+    font-family: YourFontName;
+}
+
+
+@font-face {
+    font-family: 'YourFontName2'; /*a name to be used later*/
+    src: url('./eutemia-i/Eutemia.ttf'); /*URL to font*/
+}
+
+
+.bob2 {
+    font-family: YourFontName2;
+
+}
+
+@font-face {
+    font-family: 'Playball'; /*a name to be used later*/
+    src: url('./typesetit_playball/Playball.ttf'); /*URL to font*/
+}
+
+
+.bob3 {
+    font-family: Playball;
+
+}
+
+@font-face {
+    font-family: 'angel_tears'; /*a name to be used later*/
+    src: url('./angel_tears/ANGEL___.TTF'); /*URL to font*/
+}
+
+.bob4 {
+    font-family: angel_tears;
+
+}
+
+
+@font-face {
+    font-family: 'world_of_water'; /*a name to be used later*/
+    src: url('./world-of-water/world_of_water.ttf'); /*URL to font*/
+}
+
+.bob5 {
+    font-family: world_of_water;
+
+}
+
+
+.col {
+    border: solid 1px grey;
+    border-bottom-style: none;
+    border-right-style: none;
+}
+
+.col:last-child {
+    border-right: solid 1px grey;
+}
+
+.row:last-child .col {
+    border-bottom: solid 1px grey;
+}

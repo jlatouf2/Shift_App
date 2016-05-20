@@ -1,0 +1,62 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+
+      <ion-nav-back-button>
+        <i class="ion-arrow-left-c"></i> Back
+
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <!--
+        //This is used to enable the side menu button
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+-->
+
+<!--
+function MyCtrl($scope, $ionicHistory) {
+  $scope.myGoBack = function() {
+    $ionicHistory.goBack();
+  };
+}
+
+-->
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+<!-- edit out the sidemenu with this
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Left</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item menu-close ng-click="login()">
+          Login
+        </ion-item>
+        <ion-item menu-close href="#/app/splash">
+          splash
+        </ion-item>
+        <ion-item menu-close href="#/app/loginpage">
+          SignUp
+        </ion-item>
+        <ion-item menu-close href="#/app/Storenames" >
+          Storenames
+        </ion-item>
+        <ion-item menu-close href="#/app/storelines">
+          storelines
+        </ion-item>
+        <ion-item menu-close href="#/app/tabposition">
+          tabposition
+        </ion-item>
+        <ion-item menu-close href="#/app/person">
+          person
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+edit out the side menu with this -->
+</ion-side-menus>

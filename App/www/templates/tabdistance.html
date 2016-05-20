@@ -1,0 +1,124 @@
+<ion-view >
+  <ion-nav-title class="bob3" style="font-size: 27px;">
+  <!--  <img src="logo.svg" > -->
+    Shift
+  </ion-nav-title>
+
+  <ion-nav-buttons side="right">
+    <button class="button" ng-hide="userdata" ng-click="doSomething()">
+    Sign Up
+    </button>
+    <button class="button" ng-hide="userdata" ng-click="login()">
+    Log In
+    </button>
+    <a menu-close href="#/app/splash" class="button" ng-show="userdata"  ng-click="logout()">
+      Log Out
+    </a>
+
+  </ion-nav-buttons>
+
+
+  <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+    <div class="tabs">
+      <a class="tab-item" menu-close href="#/app/tabposition">
+        <i class="icon ion-android-walk"> </i>
+        Test
+      </a>
+      <a class="tab-item active" menu-close href="#/app/tabdistance">
+        <i class="icon ion-android-navigate"></i>
+        Favorites
+      </a>
+      <a class="tab-item" menu-close href="#/app/tabposdis">
+        <i class="icon ion-calculator"></i>
+        Settings
+      </a>
+      <button class="button button-positive" style="font-size: 16px; position: absolute; right: 10px; bottom: 0.5px;" ng-click="opentabmodal()">Help</button>
+
+    </div>
+  </div>
+
+
+  <ion-content>
+
+      <ul class="list">
+
+
+              <li class="item">
+            </li>
+
+      </ul>
+
+      <div><h1 class="bob3" style="text-align: center; ">Store: <a href="">{{grabLineIn || 'Futureshop'}} </a> </h1></div>
+
+  <div><h3 class="bob3" style="text-align: center; ">This is the order of People in <a href=""> {{lineStuff || "Line1"}}</a> based on distance: </h1></div>
+
+
+
+
+  <!--    CHAT LIST -->
+
+
+
+
+
+  <ion-item class="item-remove-animate item-avatar item-icon-right" ng-click="getIndex(chat)"  on-hold="onHold2(chat)" ng-repeat="chat in chats | orderBy:'distance'" type="item-text-wrap" href="#/app/person" >
+    <img ng-src="{{chat.face}}">
+    <h2>{{chat.name}}</h2>
+    <p>Distance: {{chat.distance}} m</p>
+
+    <i class="icon ion-chevron-right icon-accessory">
+        <!--    <button class="button-assertive" ng-click="remove(chat)">
+              Delete
+            </button>
+
+            <button class="button button-positive" >
+        Edit</button>
+-->
+    </i>
+  </ion-item>
+
+
+
+  <ul class="list"  >
+      <li class="item" class="padding-top">
+        <!--
+        <button class="button button-positive" ng-click="addName2()">
+          Add Name2
+        </button>
+      -->
+      <br>
+
+        <button class="button button-positive"
+        style="font-size: 16px; position: absolute; right: 10px; bottom: 0.5px;" ng-click="addSavedName()" >
+          AddSavedname
+        </button>
+        <!--
+        <button class=" button button-positive" ng-click="removeName2()">
+          Remove Name2
+        </button>
+        <button class="button button-positive" ng-click="opentabmodal()">
+          Help
+        </button>
+        -->
+
+</li>
+</ul>
+
+
+<!--
+<ul class="list">
+    <li class="item">
+
+      <button class="button button-positive" ng-click="addSavedName()">
+        AddSavedname
+      </button>
+
+
+</li>
+</ul>
+
+-->
+
+
+	</ion-content>
+</ion-view>

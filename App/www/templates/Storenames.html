@@ -1,0 +1,235 @@
+<ion-view>
+
+
+  <ion-nav-title class="bob3" style="font-size: 27px;">
+  <!--  <img src="logo.svg" > -->
+    Shift
+  </ion-nav-title>
+
+    <ion-nav-buttons side="right">
+      <button class="button" ng-hide="userdata" ng-click="doSomething()">
+      Sign Up
+      </button>
+      <button class="button" ng-hide="userdata" ng-click="login()">
+      Log In
+      </button>
+      <a menu-close href="#/app/splash" class="button" ng-show="userdata"  ng-click="logout()">
+        Log Out
+      </a>
+
+  </ion-nav-buttons>
+
+  <ion-content>
+
+      <div class="bar bar-header bar-positive">
+        <h1 class="title">Stores Available</h1>
+        <button class="button" style="font-size: 16px;" ng-click="openstoremodal()">Help</button>
+
+      </div>
+
+
+<div ng-controller="storenamesController">
+	<!--
+		BUTTON CLICKED TO FIND ADDRESS
+	   <input type="button" class="button" id="go" value="Click Me and I'll Guess Your Address!">
+		<div id="results"></div>
+
+		<input type="text" ng-model="name" class="form-control input-lg" id="name">
+
+-->
+
+
+
+</br>
+</br>
+
+
+			<div ng-show="black" id="results"></div>
+
+
+      <h1 class="bob3" style="text-align: center; "> Stores Available in Area</h1>
+
+
+      <ul class="list">
+        <!--
+              <li class="item">
+                 <p>This page will use your coordinates to search for stores nearby that are using this service and have lines available. </p>
+                 <p>When you Search for new store name the coordinates are not added</p>
+         			   <p>When you add New Store name the coordinates are added to the db and the results are updated </p>
+                 <div class="item item-text-wrap" style="line-height: 100%; font-size: 25px; ">
+                    Please either : <br>
+                    1)Select a store nearby that has lines available <br>
+                    2)Add a store yourself so that you create your own lines on the next screen
+                 </div>
+
+              </li>
+-->
+
+              <li class="item">
+                  <div class="item item-input-inset">
+                  <label class="item-input-wrapper">
+                  <input type="text" placeholder="Enter Store Name:" ng-model="store"  id="store">
+                  </label>
+
+                  <button  ng-click="addName()" class="button button-small">
+                    Add Store</button>
+                  </div>
+              </li>
+
+       </ul>
+
+<!--
+      NOTE:   THIS BUTON IS PART OF CODE, BUT I DONT THINK IT DOES ANYTHING:
+      <button ng-click="changeStatus30();" class="button button-small">
+        Submit
+        </button>
+
+-->
+
+<ion-item class="item-remove-animate item-avatar item-icon-right" on-hold="onHold2(stores)"  ng-repeat="stores in storesAvailable" ng-click="getStoreName(stores)" type="item-text-wrap" href="#/app/storelines">
+
+  <img src="img/ionic.png">
+  <h2>{{stores}}</h2>
+  <p> Distance: {{$index}} m</p>
+
+  <i class="icon ion-chevron-right icon-accessory">
+  <!--
+  <button class="button button-positive" ng-click="removeName()">
+Edit</button>
+
+
+  <button class="button-assertive" ng-click="remove(chat)">
+        Delete
+      </button> -->
+  </i>
+
+
+
+
+</ion-item>
+
+<!--
+<li class="item" >
+    <button class="button button-positive" ng-click="removeLine()">
+      Remove Store
+    </button>
+</li>
+-->
+
+<!--
+<div class="list">
+
+    <a class="item item-avatar item item-button-right" href="#/app/storelines" ng-click="getStoreName(stores)"  ng-repeat="stores in storesAvailable">
+      <img src="img/ionic.png">
+      <h2>{{stores}}</h2>
+      <p> Distance: {{$index}} m</p>
+
+      <button class="button button-positive" ng-click="removeName()">
+  Edit</button>
+
+    </a>
+
+
+</div>
+-->
+
+
+
+
+</div>
+
+</ion-content>
+</ion-view>
+
+
+
+
+<!--
+
+
+		 Enter Store Name:  					&emsp;   		&emsp;  	<input type="text" ng-model="store"  id="store" style="width: 400px" >
+		 <input type="button" class="button"  value="Submit" ng-click="changeStatus30();">
+		 <button  ng-click="submitName()">Add Name</button>
+
+
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Store Name / Create Original Line</h4>
+      </div>
+      <div class="modal-body">
+        <p>Enter Store Name.</p>
+        		<input type="text" ng-model="storetoAdd" id="storetoAdd" >
+      </div>
+            <div class="modal-body">
+        <p>Enter Postal Code. {{postal123}}</p>
+        		<input type="text" ng-model="postalcodetoAdd" id="postalcodetoAdd" >
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="submitInformation()">Add Name</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+-->
+
+<!--
+	Trigger the modal with a button
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+Modal
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+MOdal content
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+******To add this to any button just add : data-toggle="modal" data-target="#myModal" *********
+-->
+
+
+
+
+<!--
+<h1 style="text-align: center;"> Store Available in Area</h1>
+
+<div class="table-responsive">
+	<table class="table table-striped">
+		<thead>
+			<tr >
+				<th style="text-align: center;">Store</th>
+				<th style="text-align: center;">Actions</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr style="text-align: center;" ng-repeat="stores in storesAvailable | filter:search | orderBy:'post_id'">
+				<td><a href="/#/storelines" data-target="#myModal" ng-click="grabStuff(contact.store)" class="list-group-item active">{{stores}}</td>
+				<td>
+					<a href="/#/contacts/{{$index}}" class="btn btn-default btn-xs">View</a>
+					<button class="btn btn-danger btn-xs" ng-click="removeName(name)">Delete</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+-->

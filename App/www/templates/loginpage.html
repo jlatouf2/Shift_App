@@ -1,0 +1,125 @@
+<ion-view >
+  <ion-nav-title class="bob3" style="font-size: 27px;">
+  <!--  <img src="logo.svg" > -->
+    Shift
+  </ion-nav-title>
+
+  <ion-nav-buttons side="right">
+    <button class="button" ng-hide="userdata" ng-click="doSomething()">
+    Sign Up
+    </button>
+    <button class="button" ng-hide="userdata" ng-click="login()">
+    Log In
+    </button>
+    <a menu-close href="#/app/splash" class="button" ng-show="userdata"  ng-click="logout()">
+      Log Out
+    </a>
+
+  </ion-nav-buttons>
+
+
+
+  <ion-content >
+
+    <div ng-controller="loginpageController">
+
+    <div class="bar bar-header bar-positive">
+      <h1 class="title">Register / Sign Up</h1>
+    </div>
+
+<!-- Second header information -->
+
+
+
+      <ul class="list">
+
+
+              <li class="item">
+            </li>
+
+      </ul>
+
+
+      <h2 style="text-align: center;"> Sign in using your social accounts </h2>
+
+      <div style="width:700px; margin: 0 auto; ">
+        <img src="img/facebook.png" >
+        <img src="img/twitter.png" >
+        <img src="img/google.png" >
+        <img src="img/github.png" >
+        <img src="img/linkedin.png" >
+
+    </div>
+
+    <h3 style="text-align: center;"> Or With Your Email: </h2>
+
+<div class="list" style="width:400px; margin: 0 auto; ">
+
+
+  <h4 style="text-align: left;">First Name</h4>
+
+    <label class="item item-input">
+      <i class=" placeholder-icon"></i>
+      <input type="text" ng-model="firstname"  placeholder="First Name">
+    </label>
+
+    <h4 style="text-align: left;">Last Name</h4>
+
+      <label class="item item-input">
+        <i class=" placeholder-icon"></i>
+        <input type="text" ng-model="lastname" placeholder="Last Name">
+      </label>
+
+      <h4 style="text-align: left;">Email</h4>
+
+        <label class="item item-input">
+          <i class=" placeholder-icon"></i>
+          <input type="text" placeholder="Email">
+        </label>
+
+        <h4 style="text-align: left;">Username</h4>
+
+          <label class="item item-input">
+            <i class=" placeholder-icon"></i>
+            <input type="text" placeholder="Username">
+          </label>
+
+          <h4 style="text-align: left;">Password</h4>
+
+            <label class="item item-input">
+              <i class=" placeholder-icon"></i>
+              <input type="text" placeholder="Password">
+            </label>
+
+            </br>
+
+
+
+            <a menu-close href="#/app/Storenames" ng-click="Submit2()" class="button  button-positive">Sign Up</a>
+
+
+<!--
+  <a class="item item-icon-left" href="#">
+    <i class="icon ion-person-stalker"></i>
+    Friends
+    <span class="badge badge-assertive">0</span>
+  </a>
+-->
+</div>
+</div>
+	</ion-content>
+<!-- footer needs to be after the </ion-content> ,
+refer to http://ionicframework.com/docs/api/directive/ionNavButtons/
+for info on these header and footer docs -->
+<!--
+  <ion-footer-bar align-title="left" class="bar-assertive">
+  <div class="buttons">
+    <button class="button">Left Button</button>
+  </div>
+  <h1 class="title">Title!</h1>
+  <div class="buttons" ng-click="doSomething()">
+    <button class="button">Right Button</button>
+  </div>
+</ion-footer-bar>
+-->
+</ion-view>

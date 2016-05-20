@@ -1,0 +1,118 @@
+<ion-view >
+
+  <ion-nav-title class="bob3" style="font-size: 27px;">
+  <!--  <img src="logo.svg" > -->
+    Shift
+  </ion-nav-title>
+<!--
+  <span ng-hide="userdata">
+	<a href="#register">Register</a>
+	<a href="#login">login</a>
+</span>
+
+<span ng-show="userdata">
+	<a href="#profile">Profile</a>
+</span>
+
+<span ng-show="userdata" ng-click="userdatabutton()">
+  <button class="button button-positive">
+    Add Name
+  </button>
+</span>
+
+-->
+
+  <ion-nav-buttons side="right">
+    <button class="button" ng-hide="userdata" ng-click="doSomething()">
+    Sign Up
+    </button>
+    <button class="button" ng-hide="userdata" ng-click="login()">
+    Log In
+    </button>
+    <a menu-close href="#/app/splash" class="button" ng-show="userdata"  ng-click="logout()">
+      Log Out
+    </a>
+
+  </ion-nav-buttons>
+
+
+
+  <ion-content >
+
+    <div class="bar bar-header bar-positive">
+      <h1 class="title">Personal Information</h1>
+      <button class="button" style="font-size: 16px;" ng-click="openstoremodal()">Help</button>
+
+    </div>
+
+
+      <ul class="list">
+
+
+              <li class="item">
+            </li>
+
+      </ul>
+
+  <!--    <div><h1    style="text-align: center; ">{{chat2.name || "Name"}}  </h1></div>  -->
+
+      <ion-item  class="item-thumbnail-left" on-hold="removeName2()" href="#/app/person"  ng-click="getIndex(chat)"  type="item-text-wrap" >
+        <img ng-src="{{chat2.face}}" style="height:400px; margin-left: 200px">
+        <h2 style="font-size: 50px; margin-left: 200px; margin-top: 10px">{{chat2.name || "Black"}}</h2>
+
+
+      </ion-item>
+
+
+
+    <ul class="list"  >
+  <li class="item" class="padding-top" >
+  &nbsp;  &nbsp;  &nbsp; <span style="font-size: 36px;">ID: {{chat2.id  || "ID"}} </span>
+
+</li>
+<li class="item" class="padding-top">
+  &nbsp;  &nbsp;  &nbsp; <span style="font-size: 36px;">Distance: {{chat2.distance || "Distance"}}</span>
+
+</li>
+<li class="item" class="padding-top">
+  &nbsp;  &nbsp;  &nbsp; <span style="font-size: 36px;">lastText: {{chat2.lastText || "LastText"}}</span>
+
+</li>
+
+
+  </ul>
+
+  <div><h3   class="bob3" style="text-align: center; ">This page shows the position of {{chat2.name || 'unknown'}} in <a href="">{{lineStuff || "Line1"}}:</a> </h1></div>
+
+
+
+
+
+
+  <!--  style="margin: 0px auto"   CHAT LIST -->
+<!--
+  <ion-item class="item-remove-animate item-avatar item-icon-right" on-hold="removeName2()" ng-click="getIndex(chat.name)" ng-repeat="chat in chats" type="item-text-wrap" >
+    <img ng-src="{{chat.face}}">
+    <h2>{{chat.name}}</h2>
+    <p> Position: {{chat.id}}</p>
+
+    <i class="icon ion-chevron-right icon-accessory">
+    </i>
+
+  </ion-item>
+
+  <ul class="list"  >
+      <li class="item" class="padding-top">
+      <br>
+
+        <button class="button button-positive"
+        style="font-size: 16px; position: absolute; right: 10px; bottom: 0.5px;" ng-click="addSavedName()" >
+          AddSavedname
+        </button>
+
+</li>
+</ul>
+-->
+
+	</ion-content>
+</ion-view>
